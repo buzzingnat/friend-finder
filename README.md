@@ -5,3 +5,8 @@ A compatibility-based "FriendFinder" application -- aka a dating app. This full-
 - custom radio button styling, css and javascript
 - send best match forward to client
 - display best match image and name in a nice pop-up
+- better pictures everywhere
+
+##Useful References
+- [List of questions for quiz](https://www.truity.com/test/300-question-personality-test)
+- [Picture links to put in later](https://www.pexels.com)
