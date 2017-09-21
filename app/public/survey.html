@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friend Finder - Survey</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- font awesome icon cdn, ex. <i class="fa fa-car"></i> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="friendFinder-customColors.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <center>
+        <h1>Friend Finder</h1>
+        <hr>
+        <h3>Answer questions, find a friend.</h3></center>
+      <hr>
+      <center>
+        <a href="/home">
+          <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;|&nbsp;Home</button>
+        </a>
+      </center>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h1>Personality Survey</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-9">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="name">My name is:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="name" placeholder="Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="photo">Link to a picture of me:</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="photo" placeholder="https://pixel.nymag.com/imgs/daily/science/2017/08/15/15-august.w710.h473.jpg">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-regret">
+                  <label class="control-label col-sm-4" for="regret">I do things I later regret.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="regret" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="regret" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="regret" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="regret" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="regret" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                            <div class="col-xs-2 text-left">disagree</div>
+                            <div class="col-xs-8 text-center">neutral</div>
+                            <div class="col-xs-2 text-right">agree</div>
+                        </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-keepBusy">
+                  <label class="control-label col-sm-4" for="keepBusy">I do a lot in my spare time.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="keepBusy" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="keepBusy" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="keepBusy" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="keepBusy" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="keepBusy" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                            <div class="col-xs-2 text-left">disagree</div>
+                            <div class="col-xs-8 text-center">neutral</div>
+                            <div class="col-xs-2 text-right">agree</div>
+                        </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-flatterer">
+                  <label class="control-label col-sm-4" for="flatterer">I use flattery to get ahead.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="flatterer" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="flatterer" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="flatterer" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="flatterer" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="flatterer" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                            <div class="col-xs-2 text-left">disagree</div>
+                            <div class="col-xs-8 text-center">neutral</div>
+                            <div class="col-xs-2 text-right">agree</div>
+                        </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-indecision">
+                  <label class="control-label col-sm-4" for="indecision">I can't make up my mind.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="indecision" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="indecision" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="indecision" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="indecision" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="indecision" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                            <div class="col-xs-2 text-left">disagree</div>
+                            <div class="col-xs-8 text-center">neutral</div>
+                            <div class="col-xs-2 text-right">agree</div>
+                        </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-imagination">
+                  <label class="control-label col-sm-4" for="imagination">I have a vivid imagination.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="imagination" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="imagination" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="imagination" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="imagination" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="imagination" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                            <div class="col-xs-2 text-left">disagree</div>
+                            <div class="col-xs-8 text-center">neutral</div>
+                            <div class="col-xs-2 text-right">agree</div>
+                        </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-art">
+                  <label class="control-label col-sm-4" for="art">I believe in the importance of art.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="art" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="art" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="art" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="art" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="art" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                            <div class="col-xs-2 text-left">disagree</div>
+                            <div class="col-xs-8 text-center">neutral</div>
+                            <div class="col-xs-2 text-right">agree</div>
+                        </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-anger">
+                  <label class="control-label col-sm-4" for="anger">I get angry easily.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="anger" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="anger" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="anger" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="anger" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="anger" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                                <div class="col-xs-2 text-left">disagree</div>
+                                <div class="col-xs-8 text-center">neutral</div>
+                                <div class="col-xs-2 text-right">agree</div>
+                            </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-eat">
+                  <label class="control-label col-sm-4" for="eat">I often eat too much.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="eat" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="eat" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="eat" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="eat" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="eat" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                                <div class="col-xs-2 text-left">disagree</div>
+                                <div class="col-xs-8 text-center">neutral</div>
+                                <div class="col-xs-2 text-right">agree</div>
+                            </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-rules">
+                  <label class="control-label col-sm-4" for="rules">I try to follow the rules.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="rules" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="rules" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="rules" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="rules" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="rules" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                                <div class="col-xs-2 text-left">disagree</div>
+                                <div class="col-xs-8 text-center">neutral</div>
+                                <div class="col-xs-2 text-right">agree</div>
+                            </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group question-tidy">
+                  <label class="control-label col-sm-4" for="tidy">I like to tidy up.</label>
+                  <div class="col-sm-8">
+                    <div class="row answer-radio">
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="tidy" value="1">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="tidy" value="2">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="tidy" value="3">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="tidy" value="4">&nbsp;
+                      </label>
+                      <label class="col-xs-2 radio-inline radio-item text-left">
+                        <input type="radio" name="tidy" value="5">&nbsp;
+                      </label>
+                    </div>
+                    <div class="row answer-scale">
+                      <h6 class="text-muted">
+                                <div class="col-xs-2 text-left">disagree</div>
+                                <div class="col-xs-8 text-center">neutral</div>
+                                <div class="col-xs-2 text-right">agree</div>
+                            </h6>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8 text-center">
+                    <div id="submit">
+                      <a href="#">
+                        <button type="submit" class="btn btn-primary btn-lg" id="add-btn">Submit<img src="/open-iconic/svg/home.svg"></button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </form>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+<footer class="footer">
+    <div class="container text-center">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p id="copyright"></p>
+        <p>&nbsp;</p>
+    </div>
+</footer>
+<script type="text/javascript">
+function radioQuestionsToNumbers(friend){
+    $(`.form-group`).each(function(){
+        var selected = $(this).find(`:checked`).val();
+        console.log(`change to number: `, selected);
+        if(!selected) return;
+        friend.scores.push(parseInt(selected));
+    });
+}
+function radioQuestionsDeselect(){
+    $(`.form-group`).each(function(){
+        var selected = $(this).find(`:checked`)[0];
+        console.log(`deselect: `, selected);
+        if(!selected) return;
+        selected.checked = false;
+    });
+}
+$("#add-btn").on("click", function(event) {
+    event.preventDefault();
+    var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: []
+    };
+    radioQuestionsToNumbers(newFriend);
+
+    if (newFriend.scores.length !== 10) {
+        console.log(`ERROR: Please answer all questions.`);
+        newFriend = false;
+    }
+
+  console.log(`new friend added: `, newFriend);
+  if (newFriend) {
+        $.ajax({
+        type: "POST",
+        url: "/api/new",
+        data: JSON.stringify(newFriend),
+        success: function(data) {
+            // call to request friend match
+            $.get( "/api/match", function( match ) {
+                console.log(`fetched data from api/match path`);
+                // display matched friend
+                alert(match);
+                console.log(match);
+                console.log(match.name);
+                console.log(match.photo);
+            });
+            // clear input fields after info submitted
+            $("#name").val("");
+            $("#photo").val("");
+            radioQuestionsDeselect();
+        },
+        contentType: "application/json",
+        dataType: 'json'
+        });
+    }
+});
+</script>
+<script src="/copyright.js"></script>
+</body>
+
+</html>
