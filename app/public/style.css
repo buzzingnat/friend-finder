@@ -1,3 +1,33 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Source+Sans+Pro');
+/*
+headers
+font-family: 'Istok Web', sans-serif;
+
+body
+font-family: 'Lora', serif;
+*/
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: 'Ubuntu', sans-serif;
+}
+
 .answer-radio {
     left: 5%;
     position: relative;
@@ -5,6 +35,97 @@
 }
 #submit {
 	margin-top: 15px;
+}
+.jumbotron {
+	background: transparent;
+}
+.billboard-image-home {
+	margin-top: 0px;
+    opacity: 0.3;
+    color: #fff;
+    background: #000 url("https://images.pexels.com/photos/58592/pexels-photo-58592.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") center 70%;
+    width: 100%;
+    height: 310px;
+    background-size: cover;
+    overflow: hidden;
+	position: absolute;
+	top:0; left:0;
+	z-index:-1;
+}
+.billboard-image-survey {
+	margin-top: 0px;
+    opacity: 0.3;
+    color: #fff;
+    background: #000 url("https://images.pexels.com/photos/159353/survey-opinion-research-voting-fill-159353.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") center 70%;
+    width: 100%;
+    height: 310px;
+    background-size: cover;
+    overflow: hidden;
+	position: absolute;
+	top:0; left:0;
+	z-index:-1;
+}
+
+.circle {
+    border-radius: 100%;
+    height: 250px;
+    width: 250px;
+    color: #fcfff7;
+    color: #333;
+    margin: 0 auto;
+}
+.circle h3 {
+    padding-top: 25%;
+}
+.circle p {
+    padding: 0 5%;
+}
+.bg-info {
+	background: #21a0a0
+}
+.text-info {
+	color: #d1ffff
+}
+.bg-danger {
+	background: #e53d00
+}
+.text-danger {
+	color: #f5ddbb
+}
+.bg-success {
+	background: #046865
+}
+.text-success {
+	color: #a4f8ff
+}
+
+.radio-item input[type="radio"] {
+	display: none;
+}
+.radio-item:before {
+	content: "";
+	margin-left: -30px;
+	border-radius: 100%;
+	display: inline-block;
+	height: 30px;
+    width: 30px;
+	border: solid medium #e53d00;
+}
+.radio-selected:after {
+	content: "";
+	border-radius: 100%;
+	display: inline-block;
+	height: 18px;
+    width: 18px;
+    position: relative;
+    top: -6px;
+    left: -36px;
+	background: #e56d33;
+}
+
+.btn-lg {
+	padding: .5em 1em;
+	font-size: 24px;
 }
 /* TODO: custom radio button styling */
 /* from: https://www.codeply.com/go/NKtDpPXv2x */

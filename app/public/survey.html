@@ -18,10 +18,11 @@
 <body>
   <div class="container">
     <div class="jumbotron">
+      <div class="billboard-image-survey"></div>
       <center>
-        <h1>Friend Finder</h1>
+        <h1>Friend Finder | Survey</h1>
         <hr>
-        <h3>Answer questions, find a friend.</h3></center>
+        <h3>Take a survey, find a friend.</h3></center>
       <hr>
       <center>
         <a href="/home">
@@ -368,6 +369,28 @@
           <div class="col-md-2"></div>
         </div>
       </div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><strong>Sample Name</strong></h2>
+      </div>
+      <div class="modal-body text-center">
+        <img src='https://images.pexels.com/photos/58592/pexels-photo-58592.jpeg?w=940&h=650&auto=compress&cs=tinysrgb' height="250">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <footer class="footer">
     <div class="container text-center">
         <p>&nbsp;</p>
@@ -377,10 +400,18 @@
     </div>
 </footer>
 <script type="text/javascript">
+$(function(){
+    // start the friend popup with show value of false
+    $('#myModal').modal({ show: false});
+    // make the radio buttons fancy
+    $( ".radio-item input" ).on( "click", function() {
+        $(this).parent(".radio-item").siblings().removeClass("radio-selected");
+        $(this).parent(".radio-item").addClass("radio-selected");
+    });
+});
 function radioQuestionsToNumbers(friend){
     $(`.form-group`).each(function(){
         var selected = $(this).find(`:checked`).val();
-        console.log(`change to number: `, selected);
         if(!selected) return;
         friend.scores.push(parseInt(selected));
     });
@@ -388,7 +419,6 @@ function radioQuestionsToNumbers(friend){
 function radioQuestionsDeselect(){
     $(`.form-group`).each(function(){
         var selected = $(this).find(`:checked`)[0];
-        console.log(`deselect: `, selected);
         if(!selected) return;
         selected.checked = false;
     });
@@ -407,22 +437,18 @@ $("#add-btn").on("click", function(event) {
         newFriend = false;
     }
 
-  console.log(`new friend added: `, newFriend);
   if (newFriend) {
         $.ajax({
         type: "POST",
         url: "/api/new",
         data: JSON.stringify(newFriend),
         success: function(data) {
-            // call to request friend match
-            $.get( "/api/match", function( match ) {
-                console.log(`fetched data from api/match path`);
-                // display matched friend
-                alert(match);
-                console.log(match);
-                console.log(match.name);
-                console.log(match.photo);
-            });
+            console.log(`success!!!`);
+            console.log(`data: `, data);
+            // display match
+            $('#myModal').modal('show');
+            $('#myModal').find(".modal-title").text(data.name);
+            $('#myModal').find("img").attr("src", data.photo);
             // clear input fields after info submitted
             $("#name").val("");
             $("#photo").val("");

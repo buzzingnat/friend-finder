@@ -11,6 +11,31 @@ var jsonRoutes = (app, data) => {
     });
 };
 
+var matchFriends = (data) => {
+	console.log(`data length:`, data.length);
+	var match = {name: "", photo: ""}, user = data[data.length-1], smallestDifference = 500;
+	console.log(`${user.name} survey results`, user.scores);
+    // compare survey results of last friend in friends.js file with all others
+    for (var i = 0; i < data.length - 1; i++) {
+    	var totalDifference = 0;
+    	data[i].scores.forEach(function(value, index){
+    		// console.log(`value`, value, `| index`, index);
+    		// console.log(`${totalDifference} - ${Math.abs(value - user.scores[index])} =`);
+    		totalDifference -= Math.abs(value - user.scores[index]);
+    		// console.log(`${totalDifference}\n----------------------\n\n`)
+    	});
+    	totalDifference = Math.abs(totalDifference);
+    	if (totalDifference < smallestDifference) {
+			smallestDifference = totalDifference;
+			match.name = data[i].name;
+			match.photo = data[i].photo;
+		}
+    }
+    // return closest match
+    console.log(`Closest match is:\n${match.name}\nwith a match distance of\n${smallestDifference}`);
+    return match;
+};
+
 var postNewData = (app, data) => {
     // Create new friends - takes in JSON input
     app.post("/api/new", function(req, res) {
@@ -23,32 +48,12 @@ var postNewData = (app, data) => {
             function(err) {
                 if (err) throw err;
                 console.log(`Added ${newfriend.name} to friends.js`);
-            });
-        var match = matchFriends(app, data);
+        });
+        var match = matchFriends(data);
+        // console.log(`match:`, match);
+        var value = 'value';
         res.json(match);
     });
-};
-
-var matchFriends = (app, data) => {
-	var match = {name: "", photo: ""}, user = data[data.length-1], smallestDifference = 500;
-	console.log(`user survey results`, user.scores);
-    // compare survey results of last friend in friends.js file with all others
-    for (var i = 0; i < data.length - 1; i++) {
-    	var totalDifference = 0;
-    	data[i].scores.forEach(function(value, index){
-    		console.log(`${totalDifference} - ${Math.abs(value - user.scores[index])} =`);
-    		totalDifference -= Math.abs(value - user.scores[index]);
-    		console.log(`${totalDifference}\n----------------------\n\n`)
-    	});
-    	totalDifference = Math.abs(totalDifference);
-    	if (totalDifference > smallestDifference) return;
-		smallestDifference = totalDifference;
-		match.name = data[i].name;
-		match.photo = data[i].photo;
-    }
-    // return closest match
-    console.log(`Closest match is:\n${match.name}\nwith a match distance of\n${smallestDifference}`);
-    return match;
 };
 
 exports.jsonRoutes = jsonRoutes;

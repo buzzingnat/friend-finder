@@ -62,37 +62,5 @@ var friendObject = [
       1,
       1
     ]
-  },
-  {
-    "name": "November",
-    "photo": "boom.com",
-    "scores": [
-      3,
-      3,
-      3,
-      2,
-      4,
-      3,
-      2,
-      3,
-      4,
-      3
-    ]
-  },
-  {
-    "name": "December",
-    "photo": "santa",
-    "scores": [
-      1,
-      3,
-      5,
-      3,
-      1,
-      3,
-      5,
-      3,
-      1,
-      3
-    ]
   }
 ]; module.exports = friendObject;

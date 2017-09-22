@@ -3,8 +3,8 @@ A compatibility-based "FriendFinder" application -- aka a dating app. This full-
 
 ## TO-DO
 - custom radio button styling, css and javascript
-- send best match forward to client
-- display best match image and name in a nice pop-up
+- ~send best match forward to client~
+- ~display best match image and name in a nice pop-up~
 - better pictures everywhere
 
 ## Useful References
