@@ -109,18 +109,23 @@ h6,
 	display: inline-block;
 	height: 30px;
     width: 30px;
-	border: solid medium #e53d00;
+	border: solid 4px #e53d00;
+	box-sizing: border-box;
 }
 .radio-selected:after {
 	content: "";
-	border-radius: 100%;
 	display: inline-block;
-	height: 18px;
-    width: 18px;
-    position: relative;
-    top: -6px;
-    left: -36px;
-	background: #e56d33;
+	height: 35px;
+    width: 35px;
+    position: absolute;
+    top: -3px;
+    left: -6px;
+	/*
+	background: url(https://images.vexels.com/media/users/3/143372/isolated/preview/6e633a235ea0d523078e667b9f84f15b-blue-check-mark-by-vexels.png), center center;
+    background: url(https://cdn.pixabay.com/photo/2014/04/02/10/19/check-303494_960_720.png);
+    */
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Yellow_check.svg/600px-Yellow_check.svg.png);
+    background-size: contain;
 }
 
 .btn-lg {

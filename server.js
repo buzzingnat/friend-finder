@@ -1,14 +1,16 @@
 var express = require(`express`);
 var path = require(`path`);
 var bodyParser = require(`body-parser`);
+var helmet = require('helmet');
 
 var app = express();
+app.use(helmet());
 var PORT = process.env.PORT || 3000;
 
 // local external files
 var data = require(`./app/data/friends.js`);
-console.log(`file`, data[0].name);
-var htmlRoutes = require(`./app/routing/htmlRoutes`);
+app.use(express.static('app/public'));
+// var htmlRoutes = require(`./app/routing/htmlRoutes`);
 var apiRoutes = require(`./app/routing/apiRoutes`);
 
 // Sets up the Express app to handle data parsing
@@ -18,7 +20,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // call routing code
-htmlRoutes.htmlRoutes(app, data);
+// htmlRoutes.htmlRoutes(app, data);
 apiRoutes.jsonRoutes(app, data);
 apiRoutes.postNewData(app, data);
 

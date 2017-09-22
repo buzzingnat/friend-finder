@@ -33,7 +33,7 @@ var friendObject = [
   },
   {
     "name": "September",
-    "photo": "https://c.pxhere.com/photos/ad/c4/beautiful_girl_in_the_park_throwing_leaves_autumn_portrait_romantic_park_feeling_in_love-1198262.jpg!d",
+    "photo": "https://images.pexels.com/photos/211051/pexels-photo-211051.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
     "scores": [
       4,
       4,

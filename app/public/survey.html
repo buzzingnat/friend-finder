@@ -25,7 +25,7 @@
         <h3>Take a survey, find a friend.</h3></center>
       <hr>
       <center>
-        <a href="/home">
+        <a href="/index.html">
           <button type="button" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;|&nbsp;Home</button>
         </a>
       </center>
@@ -49,7 +49,11 @@
                 <div class="form-group">
                   <label class="control-label col-sm-4" for="photo">Link to a picture of me:</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="photo" placeholder="https://pixel.nymag.com/imgs/daily/science/2017/08/15/15-august.w710.h473.jpg">
+                    <input type="url" class="form-control" id="photo" placeholder="http://lorempixel.com/200/100/people/example/">
+                    <br>
+                    <div class="text-center">
+                        <img src="http://lorempixel.com/400/300/people/example/" height="180" id="photoExample">
+                    </div>
                   </div>
                 </div>
                 <hr>
@@ -358,7 +362,7 @@
                   <div class="col-sm-8 text-center">
                     <div id="submit">
                       <a href="#">
-                        <button type="submit" class="btn btn-primary btn-lg" id="add-btn">Submit<img src="/open-iconic/svg/home.svg"></button>
+                        <button type="submit" class="btn btn-primary btn-lg" id="add-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;|&nbsp;Submit</button>
                       </a>
                     </div>
                   </div>
@@ -399,67 +403,7 @@
         <p>&nbsp;</p>
     </div>
 </footer>
-<script type="text/javascript">
-$(function(){
-    // start the friend popup with show value of false
-    $('#myModal').modal({ show: false});
-    // make the radio buttons fancy
-    $( ".radio-item input" ).on( "click", function() {
-        $(this).parent(".radio-item").siblings().removeClass("radio-selected");
-        $(this).parent(".radio-item").addClass("radio-selected");
-    });
-});
-function radioQuestionsToNumbers(friend){
-    $(`.form-group`).each(function(){
-        var selected = $(this).find(`:checked`).val();
-        if(!selected) return;
-        friend.scores.push(parseInt(selected));
-    });
-}
-function radioQuestionsDeselect(){
-    $(`.form-group`).each(function(){
-        var selected = $(this).find(`:checked`)[0];
-        if(!selected) return;
-        selected.checked = false;
-    });
-}
-$("#add-btn").on("click", function(event) {
-    event.preventDefault();
-    var newFriend = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val().trim(),
-        scores: []
-    };
-    radioQuestionsToNumbers(newFriend);
-
-    if (newFriend.scores.length !== 10) {
-        console.log(`ERROR: Please answer all questions.`);
-        newFriend = false;
-    }
-
-  if (newFriend) {
-        $.ajax({
-        type: "POST",
-        url: "/api/new",
-        data: JSON.stringify(newFriend),
-        success: function(data) {
-            console.log(`success!!!`);
-            console.log(`data: `, data);
-            // display match
-            $('#myModal').modal('show');
-            $('#myModal').find(".modal-title").text(data.name);
-            $('#myModal').find("img").attr("src", data.photo);
-            // clear input fields after info submitted
-            $("#name").val("");
-            $("#photo").val("");
-            radioQuestionsDeselect();
-        },
-        contentType: "application/json",
-        dataType: 'json'
-        });
-    }
-});
-</script>
+<script src="/main.js"></script>
 <script src="/copyright.js"></script>
 </body>
 
