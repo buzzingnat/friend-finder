@@ -1,21 +1,5 @@
 var friendObject = [
   {
-    "name": "August",
-    "photo": "https://pixel.nymag.com/imgs/daily/science/2017/08/15/15-august.w710.h473.jpg",
-    "scores": [
-      5,
-      2,
-      3,
-      4,
-      5,
-      3,
-      1,
-      5,
-      4,
-      3
-    ]
-  },
-  {
     "name": "July",
     "photo": "https://i.pinimg.com/736x/99/69/59/9969593a8e938924799122c6b6cd8926--th-july-photography-americana-photoshoot.jpg",
     "scores": [
@@ -29,6 +13,22 @@ var friendObject = [
       5,
       4,
       1
+    ]
+  },
+  {
+    "name": "August",
+    "photo": "https://pixel.nymag.com/imgs/daily/science/2017/08/15/15-august.w710.h473.jpg",
+    "scores": [
+      5,
+      2,
+      3,
+      4,
+      5,
+      3,
+      1,
+      5,
+      4,
+      3
     ]
   },
   {

@@ -22,6 +22,10 @@ function radioQuestionsToNumbers(friend){
 function radioQuestionsDeselect(){
     $(`.form-group`).each(function(){
         var selected = $(this).find(`:checked`)[0];
+        var cssImage = $(this).find(`.radio-selected`);
+        if (cssImage) {
+            cssImage.removeClass(`radio-selected`);
+        }
         if(!selected) return;
         selected.checked = false;
     });

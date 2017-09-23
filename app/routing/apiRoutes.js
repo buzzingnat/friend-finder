@@ -12,17 +12,14 @@ var jsonRoutes = (app, data) => {
 };
 
 var matchFriends = (data) => {
-	console.log(`data length:`, data.length);
-	var match = {name: "", photo: ""}, user = data[data.length-1], smallestDifference = 500;
-	console.log(`${user.name} survey results`, user.scores);
+	var match = {name: "", photo: ""},
+	user = data[data.length-1],
+	smallestDifference = 500; // start with a higher number than is possible to calculate
     // compare survey results of last friend in friends.js file with all others
     for (var i = 0; i < data.length - 1; i++) {
     	var totalDifference = 0;
     	data[i].scores.forEach(function(value, index){
-    		// console.log(`value`, value, `| index`, index);
-    		// console.log(`${totalDifference} - ${Math.abs(value - user.scores[index])} =`);
     		totalDifference -= Math.abs(value - user.scores[index]);
-    		// console.log(`${totalDifference}\n----------------------\n\n`)
     	});
     	totalDifference = Math.abs(totalDifference);
     	if (totalDifference < smallestDifference) {
@@ -40,17 +37,14 @@ var postNewData = (app, data) => {
     // Create new friends - takes in JSON input
     app.post("/api/new", function(req, res) {
         var newfriend = req.body;
-        // console.log(newfriend);
         data.push(newfriend);
         fs.writeFile(
             'app/data/friends.js',
             `var friendObject = ` + JSON.stringify(data, null, 2) + `; module.exports = friendObject;`,
             function(err) {
                 if (err) throw err;
-                console.log(`Added ${newfriend.name} to friends.js`);
         });
         var match = matchFriends(data);
-        // console.log(`match:`, match);
         var value = 'value';
         res.json(match);
     });

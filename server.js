@@ -8,9 +8,11 @@ app.use(helmet());
 var PORT = process.env.PORT || 3000;
 
 // local external files
+// =============================================================
 var data = require(`./app/data/friends.js`);
+// native express function to have a folder display static files to browser
 app.use(express.static('app/public'));
-// var htmlRoutes = require(`./app/routing/htmlRoutes`);
+// routing for post and json data calls
 var apiRoutes = require(`./app/routing/apiRoutes`);
 
 // Sets up the Express app to handle data parsing
@@ -20,7 +22,6 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // call routing code
-// htmlRoutes.htmlRoutes(app, data);
 apiRoutes.jsonRoutes(app, data);
 apiRoutes.postNewData(app, data);
 
